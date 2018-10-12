@@ -2,11 +2,22 @@
 
 namespace Timer14_3
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                Console.WriteLine("Enter time as, D:HH:MM:SS");
+                SetTimer timer = new SetTimer(Console.ReadLine());
+                timer.TimerCount();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Incorrect format. Please use colon(:) between D:H:M:S");
+            }
+            
+            Console.ReadLine();
         }
     }
 }
